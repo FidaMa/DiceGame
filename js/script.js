@@ -110,7 +110,6 @@ document.getElementById('passHeight').addEventListener('click', function() {
 });
 
 document.getElementById("nextPlayer").addEventListener("click", function() {
-    // Store the current player's score
     localStorage.setItem(`score_${playerNames[currentPlayer - 1]}`, highestJump[currentPlayer - 1]);
 
     currentPlayer++;
@@ -118,7 +117,7 @@ document.getElementById("nextPlayer").addEventListener("click", function() {
     if (currentPlayer > maxPlayers) {
         currentPlayer = 1;
         currentTurn++; 
-        document.getElementById('currentTurn').innerText = currentTurn; // Update displayed turn
+        document.getElementById('currentTurn').innerText = currentTurn; 
 
         if (currentTurn > maxTurns) {
             endGame(); 
@@ -126,7 +125,6 @@ document.getElementById("nextPlayer").addEventListener("click", function() {
         }
     }
 
-    // Update the name of the player and height, and continue the game
     document.getElementById("currentPlayerNameGame").textContent = playerNames[currentPlayer - 1];
     updateHeight(); 
     resetGame(); 
@@ -148,16 +146,11 @@ function resetGame() {
 }
 
 function endGame() {
-    // Loop through all players and save their scores to localStorage
     for (let i = 0; i < playerNames.length; i++) {
         localStorage.setItem(`score_${playerNames[i]}`, highestJump[i]);
     }
 
-    // Optionally, you can also store the currentHeight and currentTurn if needed
-    localStorage.setItem('finalCurrentTurn', currentTurn);
-
     document.getElementById('nextPlayer').style.display = 'none';
-
     document.getElementById('rankingButton').style.display = 'block';
 }
 

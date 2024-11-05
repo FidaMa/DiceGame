@@ -20,19 +20,19 @@
     <div class="center">
         <div class="card" style="width: 90%; margin: auto; margin-top: 20px;">
             <div class="card-body text-center">
-                <h1 class="noms text-center">Players Ranking</h1>
+                <h1 class="noms text-center">Classement des Joueurs</h1>
                 <div id="rankingTable"></div> <!-- Container for the Tabulator table -->
-                <button class="btn btn-primary mt-3" onclick="window.location.href='index.html'">Play Again</button>
+                <button class="btn btn-primary mt-3" onclick="window.location.href='index.html'">Rejouer</button>
             </div>
         </div>
     </div>
 
     <script>
         let players = [
-            { name: localStorage.getItem("player1"), score: parseInt(localStorage.getItem("score_" + localStorage.getItem("player1"))) || 0 },
-            { name: localStorage.getItem("player2"), score: parseInt(localStorage.getItem("score_" + localStorage.getItem("player2"))) || 0 },
-            { name: localStorage.getItem("player3"), score: parseInt(localStorage.getItem("score_" + localStorage.getItem("player3"))) || 0 },
-            { name: localStorage.getItem("player4"), score: parseInt(localStorage.getItem("score_" + localStorage.getItem("player4"))) || 0 }
+            { name: localStorage.getItem("player1"), score: parseInt(localStorage.getItem("score_" + localStorage.getItem("player1"))) },
+            { name: localStorage.getItem("player2"), score: parseInt(localStorage.getItem("score_" + localStorage.getItem("player2"))) },
+            { name: localStorage.getItem("player3"), score: parseInt(localStorage.getItem("score_" + localStorage.getItem("player3"))) },
+            { name: localStorage.getItem("player4"), score: parseInt(localStorage.getItem("score_" + localStorage.getItem("player4"))) }
         ];
 
         // Sort players by score in descending order
