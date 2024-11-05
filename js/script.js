@@ -39,7 +39,7 @@ function displayDice(rolls) {
 
     rolls.forEach(roll => {
     const diceDiv = document.createElement("div");
-    diceDiv.classList.add("dice", "roll"); // Ajoute la classe "roll" pour l'animation
+    diceDiv.classList.add("dice");
     diceDiv.textContent = roll;
 
     // Supprime la classe d'animation après que l'animation soit terminée
