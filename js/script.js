@@ -35,17 +35,12 @@ function rollDice() {
 
 function displayDice(rolls) {
     const diceContainer = document.getElementById('diceRolls');
-    diceContainer.innerHTML = ""; // Efface les dés précédents
+    diceContainer.innerHTML = ""; 
 
     rolls.forEach(roll => {
     const diceDiv = document.createElement("div");
     diceDiv.classList.add("dice");
     diceDiv.textContent = roll;
-
-    // Supprime la classe d'animation après que l'animation soit terminée
-    diceDiv.addEventListener("animationend", () => {
-        diceDiv.classList.remove("roll");
-    });
 
     diceContainer.appendChild(diceDiv);
     });
@@ -72,12 +67,12 @@ document.getElementById('attemptJump').addEventListener('click', function() {
             document.getElementById('attemptJump').style.display = 'none';
             document.getElementById('passHeight').style.display = 'none';
             if (currentTurn == maxTurns && currentPlayer==maxPlayers) {
-                endGame(); // End game and redirect to results page
-                return; // Exit early
+                endGame(); 
+                return; 
             }
             document.getElementById('nextPlayer').style.display = 'inline-block';
             attemptsLeft = 3;
-            playerHeights[currentPlayer - 1] += 2; // Increase current player's height
+            playerHeights[currentPlayer - 1] += 2; 
             updateHeight();
         } else {
             displayMessage(`Échec au saut à ${playerHeights[currentPlayer - 1]} cm.`);
@@ -90,8 +85,8 @@ document.getElementById('attemptJump').addEventListener('click', function() {
                 document.getElementById('passHeight').style.display = 'none';
                 document.getElementById('heightContainer').style.display = 'none';
                 if (currentTurn == maxTurns && currentPlayer==maxPlayers) {
-                    endGame(); // End game and redirect to results page
-                    return; // Exit early
+                    endGame(); 
+                    return; 
                 }
                 document.getElementById('nextPlayer').style.display = 'inline-block';
             }
@@ -105,16 +100,14 @@ document.getElementById('passHeight').addEventListener('click', function() {
     document.getElementById('attemptJump').style.display = 'none';
     document.getElementById('passHeight').style.display = 'none';
     if (currentTurn == maxTurns && currentPlayer==maxPlayers) {
-        endGame(); // End game and redirect to results page
-        return; // Exit early
+        endGame(); 
+        return; 
     }
     attemptsLeft = 3;
-    playerHeights[currentPlayer - 1] += 2; // Increase only the current player's height
+    playerHeights[currentPlayer - 1] += 2;
     updateHeight();
     document.getElementById('nextPlayer').style.display = 'inline-block';
 });
-
-let gameOver = false; // Flag to check if the game is over
 
 document.getElementById("nextPlayer").addEventListener("click", function() {
     // Store the current player's score
@@ -124,21 +117,20 @@ document.getElementById("nextPlayer").addEventListener("click", function() {
 
     if (currentPlayer > maxPlayers) {
         currentPlayer = 1;
-        currentTurn++; // Increments the turn
+        currentTurn++; 
         document.getElementById('currentTurn').innerText = currentTurn; // Update displayed turn
 
-        // If current turn exceeds max turns, end the game
         if (currentTurn > maxTurns) {
-            endGame(); // End game and redirect to results page
-            return; // Exit early
+            endGame(); 
+            return; 
         }
     }
 
     // Update the name of the player and height, and continue the game
     document.getElementById("currentPlayerNameGame").textContent = playerNames[currentPlayer - 1];
-    updateHeight(); // Update displayed height
-    resetGame(); // Reset the game for the new player
-    document.getElementById('gameArea').style.display = 'block'; // Ensure game area is displayed
+    updateHeight(); 
+    resetGame(); 
+    document.getElementById('gameArea').style.display = 'block'; 
 });
 
 
@@ -166,7 +158,6 @@ function endGame() {
 
     document.getElementById('nextPlayer').style.display = 'none';
 
-    // Show the ranking button
     document.getElementById('rankingButton').style.display = 'block';
 }
 
