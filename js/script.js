@@ -155,5 +155,5 @@ function endGame() {
 }
 
 document.getElementById('goToRanking').addEventListener('click', function() {
-    window.location.href = 'results.html'; 
+    window.location.href = 'results.html';
 });
