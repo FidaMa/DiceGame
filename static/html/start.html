@@ -8,19 +8,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet">
     
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="css/style.css"> 
+    <link rel="stylesheet" href="/static/css/style.css"> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DiceGame - Home</title>
 </head>
 
 <body>
     <div id="first">
-        <img src="img/probability.png" class="img">
+        <img src="/static/img/probability.png" class="img">
         <h1 class="logo">DiceGame</h1>
     </div>
         
     <div class="center">
-        <img src="img/dice2.png" class="img-dice">
+        <img src="/static/img/dice2.png" class="img-dice">
         <div class="card" style="width: 90%; margin: auto; margin-top: 20px;">
             <div class="card-body">
                 <h1 class="noms text-center">Entrez vos noms</h1>
@@ -68,7 +68,7 @@
             noms.forEach((name, index) => {
                 localStorage.setItem(`player${index + 1}`, name);   
             });
-            window.location.href = "startGame.html";
+            window.location.href = "/static/html/startGame.html";
         }
 
     </script>

@@ -5,7 +5,7 @@
 
 #first {
     height: 100vh;
-    background: linear-gradient(rgba(2, 4, 7, 0.9), rgba(92, 106, 151, 0.9)), url("/img/dice.png");
+    background: linear-gradient(rgba(2, 4, 7, 0.9), rgba(92, 106, 151, 0.9)), url("/static/img/dice.png");
     background-size: cover;  
     display: flex;
     flex-direction: column;
